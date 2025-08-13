@@ -15,9 +15,29 @@
     nav a::after { content: ''; display: block; width: 0; height: 2px; background: #d4a017; transition: width .3s; position: absolute; left: 0; bottom: -4px; }
     nav a:hover { color: #d4a017; }
     nav a:hover::after { width: 100%; }
-    .hero { background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085') center/cover no-repeat; color: white; text-align: center; padding: 6rem 2rem; animation: fadeIn 1.2s ease-in-out; }
+    
+    /* Hero Section */
+    .hero { 
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                  url('gambar3.jpg') center/cover no-repeat;
+      color: white; 
+      text-align: center; 
+      padding: 6rem 2rem; 
+      animation: fadeIn 1.2s ease-in-out; 
+    }
     .hero h2 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 1rem; font-weight: 700; }
     .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto; opacity: 0.9; }
+    
+    /* Smart cropping di mobile */
+    @media (max-width: 768px) {
+      .hero {
+        background-position: top;
+        padding: 4.5rem 1.5rem;
+      }
+      .hero h2 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+    }
+
     .section { padding: 4rem 2rem; max-width: 1100px; margin: auto; }
     .section h3 { text-align: center; font-size: 2rem; margin-bottom: 2.5rem; color: #222; position: relative; font-family: 'Playfair Display', serif; }
     .section h3::after { content: ''; display: block; width: 60px; height: 3px; background: #d4a017; margin: 0.5rem auto 0; border-radius: 2px; }
@@ -31,6 +51,8 @@
     .card-body p { font-size: 0.95rem; color: #555; margin-bottom: 0.75rem; }
     .card-body a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
     .card-body a:hover { color: #d4a017; }
+
+    /* Contact */
     .contact { text-align: center; }
     .contact p { margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; opacity: 0.9; }
     .contact-info {
@@ -45,15 +67,17 @@
       color: inherit;
       display: flex;
       align-items: center;
-      transition: color 0.3s ease, transform 0.2s ease;
-      position: relative;
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      transition: color 0.3s ease, transform 0.2s ease, background 0.3s ease;
     }
     .contact-info a:hover {
       color: #d4a017;
-      transform: translateY(-3px);
+      background: rgba(212, 160, 23, 0.08);
+      transform: translateY(-3px) scale(1.02);
     }
     .contact-info i {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       margin-right: 8px;
       transition: transform 0.3s ease;
     }
@@ -71,7 +95,8 @@
       top: 50%;
       transform: translateY(-50%);
     }
-    /* Floating contact bar di HP */
+
+    /* Mobile layout */
     @media (max-width: 768px) {
       .contact-info {
         position: fixed;
@@ -101,6 +126,7 @@
         padding-bottom: 4rem;
       }
     }
+
     footer { background: #fff; text-align: center; padding: 1rem; font-size: 0.9rem; color: #777; border-top: 1px solid #eee; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
   </style>
@@ -147,10 +173,18 @@
     <p>Whether you need a single-page or multi-page landing page, I’ll create a high-performing design tailored to your goals.</p>
 
     <div class="contact-info">
-      <a href="https://wa.me/6288239378335" target="_blank"><i class="fab fa-whatsapp" style="color:#25D366;"></i>WhatsApp</a>
-      <a href="mailto:rifkiqotrun@gmail.com"><i class="fas fa-envelope" style="color:#d4a017;"></i>Email</a>
-      <a href="https://instagram.com/nada.ada7" target="_blank"><i class="fab fa-instagram" style="color:#E4405F;"></i>Instagram</a>
-      <a href="https://discordapp.com/users/nada_2nd." target="_blank"><i class="fab fa-discord" style="color:#5865F2;"></i>Discord</a>
+      <a href="https://wa.me/6288239378335" target="_blank">
+        <i class="fab fa-whatsapp" style="color:#25D366;"></i>+62 882 3937 8335
+      </a>
+      <a href="mailto:rifkiqotrun@gmail.com">
+        <i class="fas fa-envelope" style="color:#d4a017;"></i>rifkiqotrun@gmail.com
+      </a>
+      <a href="https://instagram.com/nada.ada7" target="_blank">
+        <i class="fab fa-instagram" style="color:#E4405F;"></i>@nada.ada7
+      </a>
+      <a href="https://discordapp.com/users/nada_2nd." target="_blank">
+        <i class="fab fa-discord" style="color:#5865F2;"></i>nada_2nd
+      </a>
     </div>
   </section>
 
