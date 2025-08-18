@@ -44,12 +44,32 @@
       margin-bottom: 1rem; 
       font-weight: 700; 
     }
-    .hero-overlay p { font-size: 1.1rem; opacity: 0.95; }
+    .hero-overlay p { font-size: 1.1rem; opacity: 0.95; margin-bottom: 2rem; }
+
+    /* CTA Button */
+    .cta-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #38BDF8, #0ea5e9);
+      color: #fff;
+      padding: 0.9rem 2.2rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 5px 20px rgba(56,189,248,0.3);
+      transition: all 0.35s ease;
+    }
+    .cta-btn:hover {
+      background: linear-gradient(135deg, #0ea5e9, #38BDF8);
+      box-shadow: 0 8px 25px rgba(56,189,248,0.55);
+      transform: translateY(-4px) scale(1.03);
+    }
 
     @media (max-width: 768px) {
       .hero { padding: 3rem 1.5rem; min-height: 60vh; }
       .hero-overlay h2 { font-size: 1.8rem; }
       .hero-overlay p { font-size: 0.95rem; }
+      .cta-btn { font-size: 0.9rem; padding: 0.7rem 1.6rem; }
     }
 
     .section { padding: 4rem 2rem; max-width: 1100px; margin: auto; }
@@ -101,8 +121,9 @@
 
   <section class="hero">
     <div class="hero-overlay">
-      <h2>High-Impact Landing Pages That Convert</h2>
+      <h2>Turning Clicks into Customers with Smart Design</h2>
       <p>Specializing in crafting single-page & multi-page landing pages designed to boost your sales, leads, and brand presence.</p>
+      <a href="#contact" class="cta-btn"> Get Your Landing Page</a>
     </div>
   </section>
 
@@ -113,7 +134,7 @@
         <img src="gambar1.jpg" alt="Parrot Perfume Landing Page">
         <div class="card-body">
           <h4>Parrot Perfume</h4>
-          <p>Elegant single-page landing for a luxury perfume brand.</p>
+          <p>Luxury multi-page landing page designed for a premium perfume brand.</p>
           <a href="https://nadaada2.github.io/Parrot_Perfume/" target="_blank">View Project →</a>
         </div>
       </div>
@@ -121,8 +142,24 @@
         <img src="gambar2.jpg" alt="Nusantara Pastry Landing Page">
         <div class="card-body">
           <h4>Nusantara Pastry</h4>
-          <p>Modern multi-page landing for a local pastry shop.</p>
+          <p>Delightful multi-page landing experience for a local pastry shop.</p>
           <a href="https://nadaada2.github.io/nusantara-pastry/" target="_blank">View Project →</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="gambar4.jpg" alt="Focusly Landing Page">
+        <div class="card-body">
+          <h4>Focusly</h4>
+          <p>Minimalist single-page landing page for a productivity tool.</p>
+          <a href="https://nadaada2.github.io/Focusly/" target="_blank">View Project →</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="gambar5.jpg" alt="EcoTravel Landing Page">
+        <div class="card-body">
+          <h4>EcoTravel</h4>
+          <p>Eco-friendly single-page landing tailored for adventure seekers.</p>
+          <a href="https://nadaada2.github.io/EcoTravel/" target="_blank">View Project →</a>
         </div>
       </div>
     </div>
