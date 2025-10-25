@@ -169,6 +169,86 @@
             color: var(--text-light);
         }
 
+        /* --- Pricing Section --- */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+            padding-bottom: 2rem;
+        }
+        .price-card {
+            background: var(--bg-card);
+            border-radius: 15px;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease, border-color 0.3s;
+            border: 2px solid transparent;
+        }
+        .price-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-cyan);
+        }
+        .price-card.pro {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 10px 40px rgba(56,189,248,0.25);
+            background: #253347;
+        }
+        .price-card h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+        .price-card .price-tag {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-cyan);
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .price-card ul {
+            list-style: none;
+            margin-bottom: 2rem;
+            flex-grow: 1; 
+        }
+        .price-card ul li {
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; 
+            padding-right: 5px; 
+        }
+        .price-card ul i {
+            font-size: 0.9rem;
+            margin-right: 10px;
+        }
+        .price-card .btn-price {
+            display: block;
+            text-align: center;
+            background: var(--accent-cyan);
+            color: var(--bg-dark);
+            padding: 0.8rem 1.5rem;
+            font-weight: 700;
+            border-radius: 50px;
+            transition: background 0.3s ease;
+        }
+        .price-card .btn-price:hover {
+            background: #60E5FF;
+        }
+        .price-card .btn-price.secondary {
+            background: var(--text-secondary);
+            color: var(--bg-card);
+        }
+        .price-card .btn-price.secondary:hover {
+            background: #A0AEC0;
+        }
+
+
         /* --- Portfolio Section --- */
         .portfolio { 
             display: grid; 
@@ -226,18 +306,18 @@
             text-align: center; 
         }
         .contact-info { 
-            display: flex; 
-            flex-wrap: wrap; 
-            justify-content: center; 
-            gap: 2rem; 
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
             margin-top: 2rem;
+            padding: 0 2rem;
         }
         .contact-info a { 
             text-decoration: none; 
             color: var(--text-secondary); 
             display: flex; 
             align-items: center; 
-            padding: 0.6rem 1.2rem; 
+            padding: 0.8rem 1.2rem; 
             border-radius: 8px; 
             border: 1px solid var(--text-secondary);
             transition: all 0.3s ease; 
@@ -263,8 +343,11 @@
             .cta-btn { font-size: 0.9rem; padding: 0.8rem 1.8rem; }
             .section { padding: 3rem 1rem; }
             .heading { font-size: 1.8rem; }
-            .contact-info { gap: 1rem; }
-            .contact-info a { padding: 0.5rem 1rem; font-size: 0.9rem; }
+            .contact-info { 
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+                padding: 0;
+            }
         }
 
         /* --- Animations --- */
@@ -280,6 +363,7 @@
         <h1>Nada<span>Works</span></h1>
         <nav>
             <a href="#services">Services</a>
+            <a href="#pricing">Pricing</a>
             <a href="#portfolio">Portfolio</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -289,7 +373,7 @@
         <div class="hero-overlay">
             <h2>Turning Clicks into Customers with Smart Design</h2>
             <p>I specialize in crafting single-page & multi-page landing pages designed to boost your sales, leads, and brand presence.</p>
-            <a href="#contact" class="cta-btn"> Start Your Project <i class="fas fa-arrow-right ml-2"></i></a>
+            <a href="#pricing" class="cta-btn"> Start Your Project <i class="fas fa-arrow-right ml-2"></i></a>
         </div>
     </section>
     
@@ -315,7 +399,7 @@
             </div>
         </div>
     </section>
-
+    
     <section id="portfolio" class="section">
         <p class="subheading">Recent Projects</p>
         <h3 class="heading">Selected Works</h3>
@@ -359,7 +443,7 @@
             </div>
 
              <div class="card" data-aos="fade-up" data-aos-delay="100">
-                <img src="gambar6.jpg" alt="Pisang Gila Landing Page">
+                <img src="gambar6.jpg" alt="Crazy Chips Landing Page">
                 <div class="card-body">
                     <h4>Crazy Chips (E-commerce Food)</h4>
                     <p>Fun, high-contrast design optimized for food product visibility and impulse buys.</p>
@@ -378,6 +462,87 @@
         </div>
     </section>
 
+    <section id="pricing" class="section">
+        <p class="subheading">Investment</p>
+        <h3 class="heading">Transparent Pricing, Rapid Results</h3>
+
+        <div class="pricing-grid">
+            
+            <div class="price-card" data-aos="fade-up" data-aos-delay="100">
+                <p class="text-secondary">Express Launch (1-2 Days)</p>
+                <h4>⚡ PACKAGE STARTER</h4>
+                <p class="text-sm">Ideal for testing new ideas or quickly upgrading your presence online.</p>
+                
+                <div class="price-tag">$300<span class="text-base font-normal ml-2">USD</span></div>
+
+                <ul class="mb-6 flex-grow">
+                    <li>
+                        <span><i class="fas fa-clock" style="color:var(--accent-cyan);"></i> Delivery Time:</span>
+                        <span>1 - 2 Days</span>
+                    </li>
+                    <li>
+                        <span><i class="fas fa-sitemap" style="color:var(--accent-cyan);"></i> Structure:</span>
+                        <span>Max. 5 Sections</span>
+                    </li>
+                    <li>
+                        <span><i class="fas fa-palette" style="color:var(--accent-cyan);"></i> Design:</span>
+                        <span>High-Contrast, Minimalist</span>
+                    </li>
+                    <li>
+                        <span><i class="fas fa-bolt" style="color:#25D366;"></i> Performance:</span>
+                        <span>A+ Grade Speed</span>
+                    </li>
+                    <li>
+                        <span><i class="fas fa-link" style="color:var(--accent-cyan);"></i> Integration:</span>
+                        <span>1 (Form/Analytics)</span>
+                    </li>
+                    <li>
+                        <span><i class="fas fa-retweet" style="color:#F3732D;"></i> Revision:</span>
+                        <span>1x Minor (2-Hr Cap)</span>
+                    </li>
+                </ul>
+                <a href="#contact" class="btn-price secondary">Start Project Now</a>
+            </div>
+            
+            <div class="price-card pro" data-aos="fade-up" data-aos-delay="300">
+                <p class="text-light">Best Value (2-3 Days)</p>
+                <h4>✨ PACKAGE PRO CONVERSION</h4>
+                <p class="text-sm">For comprehensive product launches and serious lead generation.</p>
+                
+                <div class="price-tag">$500<span class="text-base font-normal ml-2">USD</span></div>
+                
+                <ul class="mb-6 flex-grow">
+                    <li>
+                        <span><i class="fas fa-clock" style="color:var(--accent-cyan);"></i> Delivery Time:</span>
+                        <span>2 - 3 Days</span>
+                    </li>
+                    <li>
+                        <span><i class="fas fa-sitemap" style="color:var(--accent-cyan);"></i> Structure:</span>
+                        <span>Max. 8 Sections</span>
+                    </li>
+                    <li>
+                        <span><i class="fas fa-palette" style="color:var(--accent-cyan);"></i> Design:</span>
+                        <span>Custom UI/UX Premium</span>
+                    </li>
+                    <li>
+                        <span><i class="fas fa-bolt" style="color:#25D366;"></i> Animations:</span>
+                        <span>Smooth Scroll Reveal & CTA</span>
+                    </li>
+                    <li>
+                        <span><i class="fas fa-code-branch" style="color:var(--accent-cyan);"></i> Integrations:</span>
+                        <span>2 (CRM, Tag Manager)</span>
+                    </li>
+                    <li>
+                        <span><i class="fas fa-retweet" style="color:#F3732D;"></i> Revision:</span>
+                        <span>2x Minor (4-Hr Cap Total)</span>
+                    </li>
+                </ul>
+                <a href="#contact" class="btn-price">Upgrade to Pro</a>
+            </div>
+        </div>
+    </section>
+
+
     <section id="contact" class="section contact">
         <p class="subheading">Ready to convert?</p>
         <h3 class="heading">Let’s Build Your High-Performing Landing Page</h3>
@@ -393,11 +558,21 @@
             <a href="https://instagram.com/nada.ada7" target="_blank" style="color:#E4405F; border-color:#E4405F;">
                 <i class="fab fa-instagram"></i> Instagram DM
             </a>
+            <a href="https://discordapp.com/users/nada_2nd." target="_blank" style="color:#5865F2; border-color:#5865F2;">
+                <i class="fab fa-discord"></i> Discord (nada_2nd.)
+            </a>
+            <a href="https://x.com/RipkiKebab" target="_blank" style="color:#38BDF8; border-color:#38BDF8;">
+                <i class="fab fa-twitter"></i> Twitter (X)
+            </a>
         </div>
     </section>
 
     <footer>
         &copy; 2025 NadaWorks. All rights reserved. Code by Nada.
+        <div class="mt-2 flex justify-center space-x-4 text-sm">
+            <a href="https://x.com/RipkiKebab" target="_blank" class="hover:text-white transition">Twitter (X)</a>
+            <a href="https://discordapp.com/users/nada_2nd." target="_blank" class="hover:text-white transition">Discord (nada_2nd.)</a>
+        </div>
     </footer>
     
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
