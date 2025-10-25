@@ -14,7 +14,7 @@
             --bg-dark: #0F172A;     /* Slate-900 */
             --bg-card: #1E293B;     /* Slate-800 */
             --accent-cyan: #38BDF8; /* Sky-400 */
-            --text-light: #F8FAFC;  /* White */
+            --text-light: #F8FAFC;   /* White */
             --text-secondary: #CBD5E1; /* Slate-300 */
         }
 
@@ -173,86 +173,6 @@
             color: var(--text-light);
         }
 
-        /* --- Pricing Section --- */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-            margin-top: 3rem;
-            padding-bottom: 2rem;
-        }
-        .price-card {
-            background: var(--bg-card);
-            border-radius: 15px;
-            padding: 2.5rem;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-            transition: transform 0.3s ease, border-color 0.3s;
-            border: 2px solid transparent;
-        }
-        .price-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-cyan);
-        }
-        .price-card.pro {
-            border-color: var(--accent-cyan);
-            box-shadow: 0 10px 40px rgba(56,189,248,0.25);
-            background: #253347;
-        }
-        .price-card h4 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--text-light);
-            margin-bottom: 0.5rem;
-        }
-        .price-card .price-tag {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--accent-cyan);
-            margin-top: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        .price-card ul {
-            list-style: none;
-            margin-bottom: 2rem;
-            flex-grow: 1; 
-        }
-        .price-card ul li {
-            margin-bottom: 0.8rem;
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between; 
-            padding-right: 5px; 
-        }
-        .price-card ul i {
-            font-size: 0.9rem;
-            margin-right: 10px;
-        }
-        .price-card .btn-price {
-            display: block;
-            text-align: center;
-            background: var(--accent-cyan);
-            color: var(--bg-dark);
-            padding: 0.8rem 1.5rem;
-            font-weight: 700;
-            border-radius: 50px;
-            transition: background 0.3s ease;
-        }
-        .price-card .btn-price:hover {
-            background: #60E5FF;
-        }
-        .price-card .btn-price.secondary {
-            background: var(--text-secondary);
-            color: var(--bg-card);
-        }
-        .price-card .btn-price.secondary:hover {
-            background: #A0AEC0;
-        }
-
-
         /* --- Portfolio Section --- */
         .portfolio { 
             display: grid; 
@@ -402,7 +322,6 @@
         <h1>Nada<span>Works</span></h1>
         <nav>
             <a href="#services">Services</a>
-            <a href="#pricing">Pricing</a>
             <a href="#portfolio">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
@@ -412,7 +331,7 @@
         <div class="hero-overlay">
             <h2>Turning Clicks into Customers with Smart Design</h2>
             <p>I specialize in crafting single-page & multi-page landing pages designed to boost your sales, leads, and brand presence.</p>
-            <a href="#pricing" class="cta-btn custom-scroll-link"> Start Your Project <i class="fas fa-arrow-right ml-2"></i></a>
+            <a href="#contact" class="cta-btn custom-scroll-link"> Start Your Project <i class="fas fa-arrow-right ml-2"></i></a>
         </div>
     </section>
     
@@ -501,92 +420,16 @@
         </div>
     </section>
 
-    <section id="pricing" class="section">
-        <p class="subheading">Investment</p>
-        <h3 class="heading">Transparent Pricing, Rapid Results</h3>
-
-        <div class="pricing-grid">
-            
-            <div class="price-card" data-aos="fade-up" data-aos-delay="100">
-                <p class="text-secondary">Express Launch (1-2 Days)</p>
-                <h4>⚡ PACKAGE STARTER</h4>
-                <p class="text-sm">Ideal for testing new ideas or quickly upgrading your presence online.</p>
-                
-                <div class="price-tag">$100<span class="text-base font-normal ml-2"></span></div>
-
-                <ul class="mb-6 flex-grow">
-                    <li>
-                        <span><i class="fas fa-clock" style="color:var(--accent-cyan);"></i> Delivery Time:</span>
-                        <span>1 - 2 Days</span>
-                    </li>
-                    <li>
-                        <span><i class="fas fa-sitemap" style="color:var(--accent-cyan);"></i> Structure:</span>
-                        <span>Max. 5 Sections</span>
-                    </li>
-                    <li>
-                        <span><i class="fas fa-palette" style="color:var(--accent-cyan);"></i> Design:</span>
-                        <span>High-Contrast, Minimalist</span>
-                    </li>
-                    <li>
-                        <span><i class="fas fa-bolt" style="color:#25D366;"></i> Performance:</span>
-                        <span>A+ Grade Speed</span>
-                    </li>
-                    <li>
-                        <span><i class="fas fa-link" style="color:var(--accent-cyan);"></i> Integration:</span>
-                        <span>1 (Form/Analytics)</span>
-                    </li>
-                    <li>
-                        <span><i class="fas fa-retweet" style="color:#F3732D;"></i> Revision:</span>
-                        <span>1x Minor (2-Hr Cap)</span>
-                    </li>
-                </ul>
-                <a href="#contact" class="btn-price secondary custom-scroll-link">Start Project Now</a>
-            </div>
-            
-            <div class="price-card pro" data-aos="fade-up" data-aos-delay="300">
-                <p class="text-light">Best Value (2-3 Days)</p>
-                <h4>✨ PACKAGE PRO CONVERSION</h4>
-                <p class="text-sm">For comprehensive product launches and serious lead generation.</p>
-                
-                <div class="price-tag">$250<span class="text-base font-normal ml-2"></span></div>
-                
-                <ul class="mb-6 flex-grow">
-                    <li>
-                        <span><i class="fas fa-clock" style="color:var(--accent-cyan);"></i> Delivery Time:</span>
-                        <span>2 - 3 Days</span>
-                    </li>
-                    <li>
-                        <span><i class="fas fa-sitemap" style="color:var(--accent-cyan);"></i> Structure:</span>
-                        <span>Max. 8 Sections</span>
-                    </li>
-                    <li>
-                        <span><i class="fas fa-palette" style="color:var(--accent-cyan);"></i> Design:</span>
-                        <span>Custom UI/UX Premium</span>
-                    </li>
-                    <li>
-                        <span><i class="fas fa-bolt" style="color:#25D366;"></i> Animations:</span>
-                        <span>Smooth Scroll Reveal & CTA</span>
-                    </li>
-                    <li>
-                        <span><i class="fas fa-code-branch" style="color:var(--accent-cyan);"></i> Integrations:</span>
-                        <span>2 (CRM, Tag Manager)</span>
-                    </li>
-                    <li>
-                        <span><i class="fas fa-retweet" style="color:#F3732D;"></i> Revision:</span>
-                        <span>2x Minor (4-Hr Cap Total)</span>
-                    </li>
-                </ul>
-                <a href="#contact" class="btn-price custom-scroll-link">Upgrade to Pro</a>
-            </div>
-        </div>
-    </section>
-
-
     <section id="contact" class="section contact">
         <p class="subheading">Ready to convert?</p>
         <h3 class="heading">Let’s Build Your High-Performing Landing Page</h3>
         <p>Whether you need a full sales page, lead magnet, or product launch page, I’ll create a high-performing design tailored precisely to your goals and audience.</p>
 
+        <div style="background: var(--bg-card); border: 1px solid var(--accent-cyan); padding: 1.5rem 2rem; border-radius: 12px; max-width: 450px; margin: 2.5rem auto; text-align: center; box-shadow: 0 10px 40px rgba(56,189,248,0.25);">
+            <h4 style="font-family: 'Montserrat', sans-serif; font-size: 1.2rem; color: var(--text-light); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px;">Flat-Rate Price</h4>
+            <div style="font-size: 2.8rem; font-weight: 800; color: var(--accent-cyan); margin-bottom: 0.5rem;">$75 USD</div>
+            <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0;">($40 deposit required to start)</p>
+        </div>
         <div class="contact-info">
             <a href="https://wa.me/6288239378335" target="_blank" style="color:#25D366; border-color:#25D366;">
                 <i class="fab fa-whatsapp"></i> Chat on WhatsApp
@@ -616,7 +459,6 @@
 
             <div class="footer-nav text-center md:text-right">
                 <a href="#services">Services</a>
-                <a href="#pricing">Pricing</a>
                 <a href="#portfolio">Projects</a>
                 <a href="#contact">Contact</a>
             </div>
@@ -662,17 +504,17 @@
                      const targetId = this.getAttribute('href');
                      const targetElement = document.querySelector(targetId);
                      
-                     // Jalankan custom scroll jika menuju #pricing atau #contact
-                     if (targetElement && (targetId === '#contact' || targetId === '#pricing')) {
-                         e.preventDefault();
-                         
-                         const headerHeight = header ? header.offsetHeight : 0;
-                         const targetPosition = targetElement.offsetTop - headerHeight;
-                         
-                         window.scrollTo({
-                             top: targetPosition,
-                             behavior: 'smooth'
-                         });
+                     // Jalankan custom scroll jika menuju #contact (sebelumnya juga ada #pricing)
+                     if (targetElement && targetId === '#contact') {
+                          e.preventDefault();
+                          
+                          const headerHeight = header ? header.offsetHeight : 0;
+                          const targetPosition = targetElement.offsetTop - headerHeight;
+                          
+                          window.scrollTo({
+                               top: targetPosition,
+                               behavior: 'smooth'
+                          });
                      }
                 });
             });
