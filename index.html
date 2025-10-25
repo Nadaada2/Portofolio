@@ -25,7 +25,8 @@
             background: var(--bg-dark); 
             color: var(--text-secondary); 
             line-height: 1.6; 
-            scroll-behavior: smooth;
+            scroll-behavior: initial; 
+            padding-top: 5rem; 
         }
         .section { 
             padding: 5rem 2rem; 
@@ -57,7 +58,8 @@
             justify-content: space-between; 
             align-items: center; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.6); 
-            position: sticky; 
+            position: fixed;
+            width: 100%;
             top: 0; 
             z-index: 100; 
         }
@@ -92,6 +94,8 @@
             justify-content: center;
             align-items: center;
             overflow: hidden;
+            padding-top: 4rem;
+            padding-bottom: 4rem;
         }
         .hero-overlay {
             position: relative;
@@ -334,6 +338,37 @@
             margin-right: 10px; 
         }
 
+        /* --- Footer Styling --- */
+        .main-footer {
+            background-color: var(--bg-card);
+            padding: 2rem 2rem;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .footer-nav a {
+            color: var(--text-secondary);
+            font-weight: 500;
+            text-decoration: none; /* Tambahkan ini agar link tidak ada garis bawah default */
+            transition: color 0.3s;
+        }
+        .footer-nav a:hover {
+            color: var(--accent-cyan);
+        }
+
+
         /* --- Mobile Adjustments --- */
         @media (max-width: 768px) {
             header { padding: 1rem 1.5rem; }
@@ -347,6 +382,10 @@
                 grid-template-columns: 1fr;
                 gap: 0.8rem;
                 padding: 0;
+            }
+            .footer-nav {
+                flex-direction: column;
+                gap: 0.5rem;
             }
         }
 
@@ -364,7 +403,7 @@
         <nav>
             <a href="#services">Services</a>
             <a href="#pricing">Pricing</a>
-            <a href="#portfolio">Portfolio</a>
+            <a href="#portfolio">Projects</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -373,7 +412,7 @@
         <div class="hero-overlay">
             <h2>Turning Clicks into Customers with Smart Design</h2>
             <p>I specialize in crafting single-page & multi-page landing pages designed to boost your sales, leads, and brand presence.</p>
-            <a href="#pricing" class="cta-btn"> Start Your Project <i class="fas fa-arrow-right ml-2"></i></a>
+            <a href="#pricing" class="cta-btn custom-scroll-link"> Start Your Project <i class="fas fa-arrow-right ml-2"></i></a>
         </div>
     </section>
     
@@ -501,7 +540,7 @@
                         <span>1x Minor (2-Hr Cap)</span>
                     </li>
                 </ul>
-                <a href="#contact" class="btn-price secondary">Start Project Now</a>
+                <a href="#contact" class="btn-price secondary custom-scroll-link">Start Project Now</a>
             </div>
             
             <div class="price-card pro" data-aos="fade-up" data-aos-delay="300">
@@ -537,7 +576,7 @@
                         <span>2x Minor (4-Hr Cap Total)</span>
                     </li>
                 </ul>
-                <a href="#contact" class="btn-price">Upgrade to Pro</a>
+                <a href="#contact" class="btn-price custom-scroll-link">Upgrade to Pro</a>
             </div>
         </div>
     </section>
@@ -567,12 +606,22 @@
         </div>
     </section>
 
-    <footer>
-        &copy; 2025 NadaWorks. All rights reserved. Code by Nada.
-        <div class="mt-2 flex justify-center space-x-4 text-sm">
-            <a href="https://x.com/RipkiKebab" target="_blank" class="hover:text-white transition">Twitter (X)</a>
-            <a href="https://discordapp.com/users/nada_2nd." target="_blank" class="hover:text-white transition">Discord (nada_2nd.)</a>
-        </div>
+    <footer class="main-footer">
+        <div class="footer-content">
+            
+            <div class="text-center md:text-left">
+                <h1 class="text-xl font-extrabold mb-1 text-light">Nada<span>Works</span></h1>
+                <p class="text-sm text-secondary">&copy; 2025 All Rights Reserved. Code by Nada.</p>
+            </div>
+
+            <div class="footer-nav text-center md:text-right">
+                <a href="#services">Services</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#portfolio">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            
+            </div>
     </footer>
     
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -581,6 +630,54 @@
             duration: 800,
             once: true,
         });
+        
+        // --- CUSTOM SMOOTH SCROLLING JAVASCRIPT ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('header');
+            
+            // Select all links pointing to anchors
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    // Check if the link points to a section ID and is not just '#'
+                    if (targetElement && targetId.length > 1) {
+                        e.preventDefault();
+                        
+                        const headerHeight = header ? header.offsetHeight : 0;
+                        const targetPosition = targetElement.offsetTop - headerHeight;
+
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Handle CTA buttons in the Hero section and Pricing
+            document.querySelectorAll('.cta-btn, .custom-scroll-link').forEach(cta => {
+                cta.addEventListener('click', function(e) {
+                     const targetId = this.getAttribute('href');
+                     const targetElement = document.querySelector(targetId);
+                     
+                     // Jalankan custom scroll jika menuju #pricing atau #contact
+                     if (targetElement && (targetId === '#contact' || targetId === '#pricing')) {
+                         e.preventDefault();
+                         
+                         const headerHeight = header ? header.offsetHeight : 0;
+                         const targetPosition = targetElement.offsetTop - headerHeight;
+                         
+                         window.scrollTo({
+                             top: targetPosition,
+                             behavior: 'smooth'
+                         });
+                     }
+                });
+            });
+        });
+        // --- END CUSTOM SMOOTH SCROLLING ---
     </script>
 </body>
 </html>
